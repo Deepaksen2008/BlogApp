@@ -38,10 +38,12 @@ export class AuthService {
 
     async getCurrentUser() {
         try {
-            return await this.account.get()
+            return await this.account.get();
         } catch (error) {
-            throw new Error
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
+
+        return null;
     }
 
     async logout() {
@@ -53,7 +55,6 @@ export class AuthService {
     }
 }
 
-// eslint-disable-next-line no-unused-vars
 const authService = new AuthService();
 
-export default AuthService;
+export default authService;
